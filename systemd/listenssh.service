@@ -1,0 +1,12 @@
+[Unit]
+Description=ListenSSH - Easily report all connection attempts on common vulnerable ports to AbuseIPDB
+After=network.target
+
+[Service]
+WorkingDirectory=/root/Listenssh
+ExecStart=/usr/bin/python3 main.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
