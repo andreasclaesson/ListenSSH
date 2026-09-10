@@ -1,6 +1,5 @@
 # ListenSSH
 Easily report all connection attempts on common vulnerable ports to AbuseIPDB
-<br>Reuploaded with permission from old owner (friend).
 
 ## Features
 - AbuseIPDB reporter (with built-in ratelimits)
@@ -51,14 +50,6 @@ systemctl enable listenssh.service
 systemctl start listenssh.service
 ```
 
-### PM2
-```sh
-# Make it so PM2 restarts ListenSSH on server reboot
-pm2 startup
-
-# Start ListenSSH
-pm2 start
-
-# Save ListenSSH to PM2 so it will be restarted on reboot.
-pm2 save
-```
+## License
+Released under the [MIT License](LICENSE). You are free to use, copy, modify, merge, publish,
+distribute, sublicense, and sell copies of this software.
