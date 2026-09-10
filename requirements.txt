@@ -1,3 +1,4 @@
-requests
-configparser
-cachetools
+# NOTE: configparser is part of the Python 3 standard library and must NOT be
+# installed here (the PyPI backport can shadow the stdlib module).
+requests>=2.31.0
+cachetools>=5.3.0
