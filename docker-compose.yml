@@ -2,6 +2,7 @@ services:
   listenssh:
     build: .
     image: listenssh:latest
+    pull_policy: build
     container_name: listenssh
     restart: unless-stopped
 
