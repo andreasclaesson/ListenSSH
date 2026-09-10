@@ -1,0 +1,23 @@
+# Never send the local config into the build context: it contains the
+# AbuseIPDB API key and the Discord webhook URL.
+config.ini
+
+# Git metadata
+.git
+.gitignore
+.gitattributes
+
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Docs and non-runtime files
+readme.md
+LICENSE
+systemd/
+docker-compose.yml
+Dockerfile
+.dockerignore
