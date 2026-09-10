@@ -1,0 +1,20 @@
+services:
+  listenssh:
+    build: .
+    image: listenssh:latest
+    pull_policy: build
+    container_name: listenssh
+    restart: unless-stopped
+
+    # Host networking is required: it lets the app bind the real ports and see
+    # the real source IPs of connection attempts. On Docker's default bridge
+    # network the source address can be rewritten by NAT, which would report the
+    # wrong IP to AbuseIPDB. Host networking is Linux-only.
+    network_mode: host
+
+    # Run an init process as PID 1 so SIGTERM reaches the app's shutdown handler.
+    init: true
+
+    # Create config.ini next to this file first:  cp config_example.ini config.ini
+    volumes:
+      - ./config.ini:/app/config.ini:ro

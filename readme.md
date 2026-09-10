@@ -50,6 +50,28 @@ systemctl enable listenssh.service
 systemctl start listenssh.service
 ```
 
+### Docker
+Docker support is intended for Linux hosts.
+
+```sh
+# Create your config first
+cp config_example.ini config.ini
+nano config.ini
+
+# Build and start in the background
+docker compose up -d
+
+# Follow the logs
+docker compose logs -f
+```
+
+Rebuild after changing the code with `docker compose up -d --build`.
+
+> **Note:** The container uses host networking (`network_mode: host`) so it binds the real ports
+> and sees the real source IPs of connection attempts. On Docker's default bridge network the
+> source address can be rewritten by NAT, which would report the wrong IP to AbuseIPDB.
+> Host networking is Linux-only.
+
 ## License
 Released under the [MIT License](LICENSE). You are free to use, copy, modify, merge, publish,
 distribute, sublicense, and sell copies of this software.
